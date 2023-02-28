@@ -72,3 +72,12 @@ resource "azurerm_linux_virtual_machine" "example" {
     version   = "latest"
   }
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "Terraform-tfstate"
+    storage_account_name = "terraformtfstatefile00"
+    container_name       = "tfstate"
+    key                  = "prod.terraform.tfstate"
+  }
+}
