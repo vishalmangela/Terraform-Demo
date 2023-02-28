@@ -36,7 +36,7 @@ resource "azurerm_network_interface" "example" {
   resource_group_name = azurerm_resource_group.example.name
 
   ip_configuration {
-    name                          = "TFDEMO-IPs"
+    name                          = "TFDEMO-IP"
     subnet_id                     = azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
   }
