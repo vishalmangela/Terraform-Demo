@@ -1,14 +1,14 @@
 terraform {
-required_providers {
-azurerm = {
-source = "hashicorp/azurerm"
-version = "3.45.0"
-}
-}
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.45.0"
+    }
+  }
 }
 provider "azurerm" {
-#
-features {}
+  #
+  features {}
 
 }
 resource "azurerm_resource_group" "example" {
@@ -43,22 +43,22 @@ resource "azurerm_network_interface" "example" {
 }
 
 resource "azurerm_linux_virtual_machine" "example" {
-  name                = "TFDEMO-VM"
-  resource_group_name = azurerm_resource_group.example.name
-  location            = azurerm_resource_group.example.location
-  size                = "Standard_F2"
-  admin_username      = "dpsadmin"
-  admin_password = "Password@123"
+  name                            = "TFDEMO-VM"
+  resource_group_name             = azurerm_resource_group.example.name
+  location                        = azurerm_resource_group.example.location
+  size                            = "Standard_F2"
+  admin_username                  = "dpsadmin"
+  admin_password                  = "Password@123"
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
 
   #admin_ssh_key {
-    #username   = "adminuser"
-    #public_key = file("~/.ssh/id_rsa.pub")
+  #username   = "adminuser"
+  #public_key = file("~/.ssh/id_rsa.pub")
   #}
-  
+
 
   os_disk {
     caching              = "ReadWrite"
