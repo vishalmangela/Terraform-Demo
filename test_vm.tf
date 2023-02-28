@@ -49,6 +49,7 @@ resource "azurerm_linux_virtual_machine" "example" {
   size                = "Standard_F2"
   admin_username      = "dpsadmin"
   admin_password = "Password@123"
+  disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.example.id,
   ]
