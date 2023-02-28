@@ -41,7 +41,7 @@ variable "bastion_admin" {
 ##
 # Create a resource group for the azure resources
 ##
-resource "azurerm_resource_group" "my_rg" {
+resource "azurerm_resource_group" "my_rgs" {
   name     = "rg-private-aks-demo"
   location = var.location.value
 }
