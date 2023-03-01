@@ -31,7 +31,7 @@ resource "azurerm_subnet" "example" {
 }
 
 resource "azurerm_network_interface" "example" {
-  name                = "TFDEMO-nic"
+  name                = "TFDEMO-nics"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 
